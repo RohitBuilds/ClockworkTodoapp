@@ -9,6 +9,20 @@ from datetime import datetime
 
 app = FastAPI(title='TODO App')
 
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=[
+#         "http://localhost:5173",
+#         "http://127.0.0.1:5173",
+#         "https://clockwork-todoapp.vercel.app"
+#     ],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
+
+# app.include_router(todo_router)
+# app.include_router(signin_router)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
@@ -21,9 +35,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(todo_router)
-app.include_router(signin_router)
-
+app.include_router(todo_router, prefix="/app/v1")
+app.include_router(signin_router, prefix="/app/v1")
 
 @app.on_event("startup")
 def startup_event():

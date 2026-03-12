@@ -23,13 +23,21 @@ app = FastAPI(title='TODO App')
 
 # app.include_router(todo_router)
 # app.include_router(signin_router)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=["*"],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origin_regex="https://.*vercel.app",
+    allow_credentials=False,  # disable for wildcard or multiple domains
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 app.include_router(todo_router, prefix="/app/v1")
 app.include_router(signin_router, prefix="/app/v1")

@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from models.notifications import Notification
 import time
 from datetime import datetime
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title='TODO App')
 
@@ -32,8 +33,8 @@ app = FastAPI(title='TODO App')
 # )
 app.add_middleware(
     CORSMiddleware,
-    allow_origin_regex="https://.*vercel.app",
-    allow_credentials=False,  # disable for wildcard or multiple domains
+    allow_origin_regex=r"https://.*vercel.app",
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )

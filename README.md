@@ -40,15 +40,16 @@ Tech Stack
 
 Frontend
 
-React
-Vite
-JavaScript
-HTML
-CSS for styling and layout
+React,
+Vite,
+JavaScript,
+HTML,
+CSS for styling and layout,
+Tailwind
 
 Backend
 
-FastAPI
+FastAPI,
 Python
 
 Backend Validation

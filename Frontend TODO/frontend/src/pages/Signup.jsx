@@ -17,7 +17,7 @@ const Signup = () => {
 
     try {
       // POST request to backend signup endpoint
-      const response = await API.post("/app/v1/signup", data);
+      const response = await API.post("/signup", data);
       
       navigate("/"); // redirect to login page
     } 

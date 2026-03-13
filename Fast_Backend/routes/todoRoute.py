@@ -14,7 +14,8 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime, timezone, timedelta
 
 
-router=APIRouter(prefix='/app/v1',tags=['Todos'])
+# router=APIRouter(prefix='/app/v1',tags=['Todos'])
+router = APIRouter(tags=["Todos"])
 scheduler = BackgroundScheduler()
 scheduler.start()
 

@@ -18,10 +18,6 @@ from datetime import datetime, timezone, timedelta
 router = APIRouter(tags=["Todos"])
 scheduler = BackgroundScheduler()
 scheduler.start()
-
-@router.on_event("startup")
-def start_scheduler():
-    scheduler.start()
     
 class TodoCreate(BaseModel):
     title:str

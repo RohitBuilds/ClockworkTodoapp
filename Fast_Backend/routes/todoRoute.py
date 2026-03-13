@@ -104,7 +104,7 @@ def create_todo(item: TodoCreate, user_id: int, db: Session = Depends(get_db)):
         scheduler.add_job(
                send_notification,
                "date",
-        run_date=todo.due_time,
+        run_date=due_time_utc,
         args=[todo.user_id, todo.id]
         )
 
@@ -131,7 +131,7 @@ def get_notifications(user_id: int, db: Session = Depends(get_db)):
             "message": n.message
         })
 
-        db.delete(n)   # optional (prevents duplicate notifications)
+        #db.delete(n)   # optional (prevents duplicate notifications)
     db.commit()
     return result
 

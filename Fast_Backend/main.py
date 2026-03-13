@@ -23,7 +23,7 @@ app.include_router(signin_router, prefix="/app/v1")
 
 scheduler = BackgroundScheduler()
 
-@router.on_event("startup")
+@app.on_event("startup")
 def start_scheduler():
     scheduler.start()
     

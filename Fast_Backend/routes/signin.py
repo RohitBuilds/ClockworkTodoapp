@@ -7,8 +7,8 @@ from database import Base, engine,SessionLocal
 from sqlalchemy.orm import Session
 from auth import hash_password, verify_password
 
-router=APIRouter(prefix='/app/v1',tags=['users'])
-# router = APIRouter(tags=['users']) 
+# router=APIRouter(prefix='/app/v1',tags=['users'])
+router = APIRouter(tags=['users']) 
 
 class UserCreate(BaseModel):
     username:str

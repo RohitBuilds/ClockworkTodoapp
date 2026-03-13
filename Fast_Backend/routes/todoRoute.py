@@ -122,7 +122,8 @@ def create_todo(item: TodoCreate, user_id: int, db: Session = Depends(get_db)):
 @router.get("/notifications")
 def get_notifications(user_id: int, db: Session = Depends(get_db)):
     notifications = db.query(Notification).filter(
-        Notification.user_id == user_id
+        Notification.user_id == user_id,
+        Notification.read == False
     ).all()
     result = []
     for n in notifications:
@@ -130,7 +131,7 @@ def get_notifications(user_id: int, db: Session = Depends(get_db)):
             "id": n.id,
             "message": n.message
         })
-
+        n.read = True
         #db.delete(n)   # optional (prevents duplicate notifications)
     db.commit()
     return result

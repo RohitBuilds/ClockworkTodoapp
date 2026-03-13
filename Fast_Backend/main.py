@@ -7,6 +7,7 @@ from models.notifications import Notification
 import time
 from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware
+from apscheduler.schedulers.background import BackgroundScheduler
 
 app = FastAPI(title='TODO App')
 app.add_middleware(
@@ -20,6 +21,12 @@ app.add_middleware(
 app.include_router(todo_router, prefix="/app/v1")
 app.include_router(signin_router, prefix="/app/v1")
 
+scheduler = BackgroundScheduler()
+
+@router.on_event("startup")
+def start_scheduler():
+    scheduler.start()
+    
 @app.on_event("startup")
 def startup_event():
     from database import Base, engine

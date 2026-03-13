@@ -21,7 +21,7 @@ const Login = () => {
   setServerError("");
 
   try {
-    const response = await API.post("/signin", data);
+    const response = await API.post("/app/v1/signin", data);
 
     // save token and userId
     localStorage.setItem("token", response.data.access_token || "dummy-token");

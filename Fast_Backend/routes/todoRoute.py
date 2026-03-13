@@ -19,6 +19,10 @@ router = APIRouter(tags=["Todos"])
 scheduler = BackgroundScheduler()
 scheduler.start()
 
+@app.on_event("startup")
+def start_scheduler():
+    scheduler.start()
+    
 class TodoCreate(BaseModel):
     title:str
     description:str

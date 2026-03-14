@@ -7,6 +7,10 @@
   font-family:'Inter', sans-serif;
   transition: all 0.25s ease;
 }
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
 
 body {
   margin: 0;
@@ -795,6 +799,48 @@ body {
 
   .auth-title{
     font-size:30px;
+  }
+
+}
+
+/* ===== MOBILE OVERFLOW FIX ===== */
+
+@media (max-width:600px){
+
+  *{
+    max-width:100%;
+  }
+
+  .app-container{
+    width:100%;
+    padding:0 14px;
+  }
+
+  .todo-card{
+    width:100%;
+    padding:18px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .todo-item{
+    width:100%;
+  }
+
+  .todo-actions{
+    width:100%;
+  }
+
+  .auth-card{
+    width:100%;
+    max-width:100%;
+  }
+
+}
+@media (max-width:600px){
+
+  .nav-content{
+    padding:14px 16px;
   }
 
 }

@@ -446,3 +446,143 @@ body {
   background:#14aed1;
   border-radius:10px;
 }
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* -------- Large Tablets / Small Laptops -------- */
+@media (max-width: 1024px){
+
+  .nav-content{
+    padding:16px 24px;
+  }
+
+  .app-container{
+    padding:0 20px;
+  }
+
+  .todo-card{
+    padding:35px;
+  }
+
+}
+
+
+/* -------- Tablets -------- */
+@media (max-width: 768px){
+
+  .nav-content{
+    padding:14px 18px;
+  }
+
+  .logo{
+    font-size:24px;
+  }
+
+  .tagline{
+    font-size:11px;
+  }
+
+  .todo-card{
+    padding:30px;
+  }
+
+  .todo-form{
+    flex-direction:column;
+  }
+
+  .todo-form button{
+    width:100%;
+  }
+
+  .todo-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .todo-actions{
+    width:100%;
+    justify-content:flex-end;
+  }
+
+}
+
+
+/* -------- Mobile Phones -------- */
+@media (max-width: 480px){
+
+  .nav-content{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    padding:12px 16px;
+  }
+
+  .nav-right{
+    width:100%;
+  }
+
+  .logout-btn-top{
+    width:100%;
+  }
+
+  .logo{
+    font-size:22px;
+  }
+
+  .tagline{
+    font-size:10px;
+  }
+
+  .app-bg{
+    padding:40px 12px;
+  }
+
+  .todo-card{
+    padding:20px;
+  }
+
+  .todo-content h3{
+    font-size:16px;
+  }
+
+  .todo-content p{
+    font-size:13px;
+  }
+
+  .done-btn,
+  .delete-btn{
+    padding:6px 12px;
+    font-size:13px;
+  }
+
+  .delete-all{
+    padding:10px;
+    font-size:14px;
+  }
+
+}
+
+
+/* -------- Very Small Phones -------- */
+@media (max-width: 360px){
+
+  .logo{
+    font-size:20px;
+  }
+
+  .todo-content h3{
+    font-size:15px;
+  }
+
+  .todo-actions{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .done-btn,
+  .delete-btn{
+    width:100%;
+  }
+
+}

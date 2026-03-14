@@ -7,3 +7,4 @@ dnspython
 sqlalchemy
 argon2-cffi
 apscheduler
+psycopg2-binary
